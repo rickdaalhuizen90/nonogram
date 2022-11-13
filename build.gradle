@@ -31,7 +31,7 @@ task buildReactApp(type: NodeTask, dependsOn: 'yarn') {
     script = project.file('node_modules/webpack/bin/webpack.js')
     args = [
             '--mode', 'development',
-            '--entry', './src/main/frontend/js/App.jsx',
+            '--entry', './frontend/index.js',
             '-o', './src/main/resources/static/dist'
     ]
 }

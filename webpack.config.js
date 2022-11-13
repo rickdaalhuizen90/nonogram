@@ -1,22 +1,28 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 module.exports = {
     devtool: 'source-map',
     cache: true,
+    plugins: [new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    })],
     module: {
         rules: [{
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
-            loader: "babel-loader",
-            options: {
-                presets: ['@babel/preset-env', '@babel/preset-react']
-            }
+            loader: "babel-loader"
         }, {
             test: /\.css$/,
-            use: [
-                { loader: 'style-loader' },
-                { loader: 'css-loader' }
-            ]
+            use: [MiniCssExtractPlugin.loader, "css-loader"],
         }]
     },
+    optimization: {
+        minimizer: [
+          new CssMinimizerPlugin(),
+        ],
+      },
     resolve: {
         extensions: ['.js', '.jsx']
     },
