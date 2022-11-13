@@ -1,0 +1,25 @@
+{
+  "name": "nonogram",
+  "version": "1.0.0",
+  "description": "KDG - Project 2022-23",
+  "author": "Rick Daalhuizen",
+  "license": "ISC",
+  "dependencies": {
+    "reset-css": "^5.0.1",
+    "normalize-css": "^2.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
