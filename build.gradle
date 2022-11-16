@@ -27,7 +27,7 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-task buildReactApp(type: NodeTask, dependsOn: 'yarn') {
+task buildApp(type: NodeTask, dependsOn: 'yarn') {
     script = project.file('node_modules/webpack/bin/webpack.js')
     args = [
             '--mode', 'development',
@@ -36,6 +36,6 @@ task buildReactApp(type: NodeTask, dependsOn: 'yarn') {
     ]
 }
 
-processResources.dependsOn 'buildReactApp'
+processResources.dependsOn 'buildApp'
 clean.delete << file('node_modules')
 clean.delete << file('src/main/resources/static/dist')
