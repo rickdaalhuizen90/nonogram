@@ -10,9 +10,9 @@ module.exports = {
   })],
   module: {
     rules: [{
-      test: /\.(js|jsx)$/,
+      test: /\.ts$/,
+      use: 'ts-loader',
       exclude: /node_modules/,
-      loader: "babel-loader"
     }, {
       test: /\.(pcss|css)$/,
       use: [
@@ -35,7 +35,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js',],
+    extensions: ['.ts', '.js',],
   },
   output: {
     filename: 'app.js'
